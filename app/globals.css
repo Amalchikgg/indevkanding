@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #000;
+  overflow: hidden;
+}
+
+.element {
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.5s ease;
+}
+
+.element:hover {
+  border-color: white;
+}
+
+.transition_dropdown {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.dropdown_open {
+  opacity: 1;
+  max-height: 1000px; /* Некоторое достаточно большое значение, чтобы вместить весь контент */
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.bgGradient {
+  background: linear-gradient(#e4963e, #c9687a);
+}
+
+.circle {
+  left: 2px;
+  top: 2px;
+  transition: left 0.5s ease-in-out;
+}
+
+.container:hover .circle {
+  left: calc(100% - 27px);
+}
+
+.textGradient {
+  background: linear-gradient(174deg, #ffc700 10%, #ae00ca 120%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lume {
+  display: block;
+  background: linear-gradient(90deg, #0027f4 -30.56%, #00ff38 60.75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 15px;
+}
+
+.complecs {
+  background: linear-gradient(180deg, #ffe500 -80%, #bd5295 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tilda {
+  background: linear-gradient(180deg, #ffc700 0%, #cc7a00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bracketSquare {
+  background: linear-gradient(180deg, #c58e00 0%, #b983ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.curlyBracket {
+  background: linear-gradient(180deg, #0037c5 0%, #b983ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.arrow {
+  background: linear-gradient(162deg, #00f0ff 1.36%, #002876 74.56%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modalText {
+  background: linear-gradient(90deg, #ff8a00 -3.18%, #ffe600 58.7%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.submit:hover .buttonText {
+  background: linear-gradient(90deg, #fb004b -27.25%, #d87100 74.03%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
+  animation: hidden 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 100;
+  /* Меню скрыто за пределами экрана */
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+  overflow: auto;
+  /* Меню появляется на весь экран */
+}
+
+.containers {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.menu.active {
+  transform: translateX(0%);
+}
+
+@keyframes animate {
+  0% {
+    top: -50%;
+    left: -30%;
+  }
+  25% {
+    top: 0;
+    left: 85%;
+  }
+  50% {
+    top: -55%;
+    left: 85%;
+  }
+  75% {
+    top: 10%;
+    left: -10%;
+  }
+  100% {
+    top: -50%;
+    left: -30%;
+  }
+}
+
+.object1,
+.object2 {
+  position: absolute;
+  width: 720px;
+  height: 647px;
+  -webkit-transform: rotate(135deg);
+  z-index: -10;
+}
+
+.object1 {
+  animation: animate 10s linear infinite;
+}
+
+.object2 {
+  animation: animate 10s linear infinite reverse;
+}
